@@ -1,4 +1,4 @@
-package seedu.address.model.person;
+package seedu.address.model.applicant;
 
 /**
  * Represents an Applicant's status

@@ -1,4 +1,4 @@
-package seedu.address.model.person;
+package seedu.address.model.applicant;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
@@ -10,10 +10,10 @@ import java.util.Set;
 import seedu.address.model.tag.Tag;
 
 /**
- * Represents a Person in the address book.
+ * Represents a Applicant in HMHero.
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
-public class Person {
+public class Applicant {
 
     // Identity fields
     private final Name name;
@@ -22,17 +22,19 @@ public class Person {
 
     // Data fields
     private final Address address;
+    private final Status status;
     private final Set<Tag> notes = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> notes) {
+    public Applicant(Name name, Phone phone, Email email, Address address, Status status, Set<Tag> notes) {
         requireAllNonNull(name, phone, email, address, notes);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.status = status;
         this.notes.addAll(notes);
     }
 
@@ -52,6 +54,10 @@ public class Person {
         return address;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
@@ -64,13 +70,13 @@ public class Person {
      * Returns true if both persons have the same name.
      * This defines a weaker notion of equality between two persons.
      */
-    public boolean isSamePerson(Person otherPerson) {
-        if (otherPerson == this) {
+    public boolean isSameApplicant(Applicant otherApplicant) {
+        if (otherApplicant == this) {
             return true;
         }
 
-        return otherPerson != null
-                && otherPerson.getName().equals(getName());
+        return otherApplicant != null
+                && otherApplicant.getName().equals(getName());
     }
 
     /**
@@ -83,16 +89,17 @@ public class Person {
             return true;
         }
 
-        if (!(other instanceof Person)) {
+        if (!(other instanceof Applicant)) {
             return false;
         }
 
-        Person otherPerson = (Person) other;
-        return otherPerson.getName().equals(getName())
-                && otherPerson.getPhone().equals(getPhone())
-                && otherPerson.getEmail().equals(getEmail())
-                && otherPerson.getAddress().equals(getAddress())
-                && otherPerson.getNotes().equals(getNotes());
+        Applicant otherApplicant = (Applicant) other;
+        return otherApplicant.getName().equals(getName())
+                && otherApplicant.getPhone().equals(getPhone())
+                && otherApplicant.getEmail().equals(getEmail())
+                && otherApplicant.getAddress().equals(getAddress())
+                && otherApplicant.getStatus().equals(getStatus())
+                && otherApplicant.getNotes().equals(getNotes());
     }
 
     @Override

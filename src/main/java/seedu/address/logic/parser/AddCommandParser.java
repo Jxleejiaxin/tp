@@ -12,13 +12,12 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Applicant;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.Phone;
-import seedu.address.model.person.Status;
+import seedu.address.model.applicant.Address;
+import seedu.address.model.applicant.Applicant;
+import seedu.address.model.applicant.Email;
+import seedu.address.model.applicant.Name;
+import seedu.address.model.applicant.Phone;
+import seedu.address.model.applicant.Status;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -44,12 +43,12 @@ public class AddCommandParser implements Parser<AddCommand> {
         Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
-        Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_NOTE));
         Status status = Status.APPLIED;
+        Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_NOTE));
 
-        Person person = new Applicant(name, phone, email, address, tagList, status);
+        Applicant applicant = new Applicant(name, phone, email, address, status, tagList);
 
-        return new AddCommand(person);
+        return new AddCommand(applicant);
     }
 
     /**
