@@ -689,10 +689,9 @@ Thomas, ACCEPTED, 91918153, thomas@gmail.com, 6 Sims Drive (s)543230
 
 
 <div markdown="span" class="alert alert-info" role="alert">:information_source: <strong>Note:</strong> <br>
-<li> The `reject` command only rejects `Applicant` which has a name and phone that fully matches the specified search.
-</li> 
-<li> The `NAME` and `PHONE `is required to reject `Applicant` from `status` `APPLIED`, `SHORTLISTED` and `ACCEPTED`
-to `status` `REJECTED`. </li> </div>
+* The `reject` command only rejects `Applicant` which has a name and phone that fully matches the specified search.
+* The `NAME` and `PHONE `is required to reject `Applicant` from `status` `APPLIED`, `SHORTLISTED` and `ACCEPTED`
+to `status` `REJECTED`.  </div>
 
 
 **Example:**
