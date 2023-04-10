@@ -5,16 +5,6 @@ title: <Lee Jia Xin> Project Portfolio Page
 
 ### Project: HMHero
 
-### What should be included
-
-- [x] Code contributed
-- [x] Enhancements implemented
-- [x] Contributions to the UG (Optional)
-- [x] Contributions to the DG (Optional)
-- [x] Contributions to team-based tasks
-- [x] Review/mentoring contributions
-- [x] Contributions beyond the project team
-
 (**Overview**)
 
 HMHero is an Applicant Managing System designed to be used by human resource professionals, hiring managers,
@@ -43,6 +33,10 @@ This has since been adapted to `SkillCommand` as we decided to create a separate
 - **Test Cases**:
   
   - Wrote test cases for FindCommand 
+    - Achieve 100% code coverage for FindCommand
+  - Due to limitations of java predicate equality checking, I was unable to write sufficient test cases for
+  FindCommandParser. However, I spent a substantial amount of time narrowing down the reason for the failure of test
+  cases. FindCommandParser test cases were then written by my team members.
 
 - **Documentation**:
 
@@ -50,7 +44,7 @@ This has since been adapted to `SkillCommand` as we decided to create a separate
   - Wrote and ensured correctness of Feature implementation section in Developer Guide.
   - Drew add, edit, find, advance command activity diagrams and find command sequence diagram.
   - Fixed some bugs found during PE-dryrun.
-  - Fixed some bugs personally found in DG (links not working)
+  - Fixed some bugs personally found in DG (eg. links not working, missing [back to table of contents])
 
 - **Community**:
 
