@@ -33,16 +33,24 @@ HMHero is an Applicant Managing System designed to be used by human resource pro
 
 - **Enhancements to existing features**:
 
-  - Created and added `Status` field to Person class and updating `JsonAdaptedPerson`.
-  - For all subsequent fields added (interview date, applied date), updated AddCommandParser, AddCommand, JsonAdaptedPerson.
-  - Improve find command to find based on note prefix (adapted to skill command).
-  - Improve find command's code quality by implementing `Predicate<Person>` field.
+  - Create `Status` class and add corresponding field to Person class and updating `JsonAdaptedPerson`.
+  - For all subsequent fields added (interview date, applied date), update `AddCommandParser`, `AddCommand`, `EditCommand`, `EditCommandParser`, `JsonAdaptedPerson`.
+  - Add `NoteContainsKeywordsPredicate` to facilitate finding based on note prefix.
+  - Improve find command's code quality by implementing single `Predicate<Person>` field as previously it had `NameContainsKeywordpredicate`, `PhoneContainsKeywordsPredicate` and `NamePhoneNumberPredicate` all as separate fields.
+  - Update `FindCommand` and `FindCommandParser` to create and use `NoteContainsKeywordsPredicate` to find `Person` based on their notes.
+This has since been adapted to `SkillCommand` as we decided to create a separate command for this feature.
+
+- **Test Cases**:
+  
+  - Wrote test cases for FindCommand 
 
 - **Documentation**:
 
   - Wrote the `About HMHero` and `Features` section in the User Guide.
   - Wrote and ensured correctness of Feature implementation section in Developer Guide.
   - Drew add, edit, find, advance command activity diagrams and find command sequence diagram.
+  - Fixed some bugs found during PE-dryrun.
+  - Fixed some bugs personally found in DG (links not working)
 
 - **Community**:
 
