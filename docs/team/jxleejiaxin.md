@@ -46,7 +46,7 @@ HMHero is an Applicant Managing System designed to be used by human resource pro
 
 - **Community**:
 
-  - Reviewed PRs from team members. Link to PRs reviewed: https://github.com/AY2223S2-CS2103T-W14-4/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3AJxleejiaxin
+  - Reviewed PRs from team members. Link to PRs reviewed: [PRs](https://github.com/AY2223S2-CS2103T-W14-4/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3AJxleejiaxin)
   - Created some issues for TODOs.
   - Assisted members in debugging.
 
